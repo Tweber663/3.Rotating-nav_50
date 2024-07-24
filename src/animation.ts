@@ -15,6 +15,7 @@ class AnimationBase {
     }
 
     getElements(container: HTMLDivElement) {
+        console.log('working')
         this.dom  = {
            openBtn:  container.querySelector('#open') as HTMLButtonElement, 
            closeBtn: container.querySelector('#close') as HTMLButtonElement, 
@@ -24,13 +25,13 @@ class AnimationBase {
 
     open() {
         this.dom.openBtn.addEventListener('click', () => {
-            this.dom.container.classList.add('show-nav');
+            this.dom.container.classList.add('nav-active');
         })
     }
     
     close() {
         this.dom.closeBtn.addEventListener('click', () => {
-            this.dom.container.classList.remove('show-nav');
+            this.dom.container.classList.remove('nav-active');
         })
     }
 }
